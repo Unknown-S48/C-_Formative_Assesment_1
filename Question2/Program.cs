@@ -1,4 +1,4 @@
-//Wian Sandenbergh
+﻿//Wian Sandenbergh
 //Question 2
 /*
 Develop a Simple ATM Console Application using C# that simulates a basic banking withdrawal transaction. 
@@ -54,13 +54,14 @@ class Question_2
 	{
 		while (true)
 		{
-			if (decimal.TryParse(Console.Readline(), out decimal results) && result >= 0)
+			int result = 0;
+			if (decimal.TryParse(Console.ReadLine(), out decimal results) && result >= 0)
 			{
 				return result;
 			}
 			else
 			{
-				Console.WriteLine("")
+				Console.WriteLine("");
 			}
 		}
 	}
