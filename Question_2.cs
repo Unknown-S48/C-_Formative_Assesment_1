@@ -21,32 +21,40 @@ class Question_2
 		//Getting and validating balance
 		Console.WriteLine("Enter account balance: ");
 		decimal balance = GetValidDecimalInput();
-		//Getting and validating the withdrawal amount
-		Console.WriteLine("Enter withdrawal amount: ");
-		decimal withdrawal = GetValidDecimalInput();
-		//Adding a break for spacing
-		Console.WriteLine("");
-		//Validating the withdrawal process
-		//Output for an invalid input
-		if (withdrawal <=0)
+		//Loop for withdrawal attempts
+		bool transactionComplete = false;
+		while (!transactionComplete)
 		{
-			Console.WriteLine("Transaction Failed!");
-			Console.WriteLine("Error: withdrawal amount must be greater than 0!");
-		}
-		//Output for insufficient funds
-		else if (withdrawal > balance)
-		{
-			Console.WriteLine("Transaction Failed!");
-			Console.WriteLine($"Error: Insufficient funds. your current balance is {balance:C}");
-		}
-		//Output for a successful withdrawal
-		else
-		{
-			decimal newBlanace = balance - withdrawal;
-			Console.WriteLine("Transaction Successful");
-			Console.WriteLine($"Withdrawal Amount: {withdrawal:C}");
-			Console.WriteLine($"Updated Balance: {newBlanace}");
-			Console.WriteLine($"Transaction Time: {DateTime.Now:dd MMM yyyy HH:mm:ss}");
+			//Getting and validating the withdrawal amount
+			Console.WriteLine("Enter withdrawal amount: ");
+			decimal withdrawal = GetValidDecimalInput();
+			//Adding a break for spacing
+			Console.WriteLine("");
+			//Validating the withdrawal process
+			//Output for an invalid input
+			if (withdrawal <= 0)
+			{
+				Console.WriteLine("Transaction Failed!");
+				Console.WriteLine("Error: withdrawal amount must be greater than 0!");
+				Console.WriteLine("Please try again.\n");
+			}
+			//Output for insufficient funds
+			else if (withdrawal > balance)
+			{
+				Console.WriteLine("Transaction Failed!");
+				Console.WriteLine($"Error: Insufficient funds. your current balance is {balance:C}");
+				Console.WriteLine("Please try again.\n");
+			}
+			//Output for a successful withdrawal
+			else
+			{
+				decimal newBalance = balance - withdrawal;
+				Console.WriteLine("Transaction Successful");
+				Console.WriteLine($"Withdrawal Amount: {withdrawal:C}");
+				Console.WriteLine($"Updated Balance: {newBalance:C}");
+				Console.WriteLine($"Transaction Time: {DateTime.Now:dd MMM yyyy HH:mm:ss}");
+				transactionComplete = true;
+			}
 		}
 	}
 	// Helper method
@@ -54,13 +62,14 @@ class Question_2
 	{
 		while (true)
 		{
-			if (decimal.TryParse(Console.Readline(), out decimal results) && result >= 0)
+			if (decimal.TryParse(Console.ReadLine(), out decimal results) && results >= 0)
 			{
-				return result;
+				return results;
 			}
 			else
 			{
-				Console.WriteLine("")
+				Console.WriteLine("Invalid input! Please enter a valid number.");
+				Console.WriteLine("");
 			}
 		}
 	}
