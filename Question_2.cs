@@ -10,6 +10,58 @@ class Question_2
 {
 	static void Main()
 	{
-
+		//Printing the program title
+		Console.WriteLine("===== CTU SIMPLE ATM SYSTEM =====");
+		Console.WriteLine("");
+		//Asking for users name and printing it in upper case
+		Console.WriteLine("HI , WHAT IS YOUR NAME?");
+		string name = Console.ReadLine() ?? string.Empty;
+		Console.WriteLine("");
+		Console.WriteLine($"WELCOME {name.ToUpper()}");
+		//Getting and validating balance
+		Console.WriteLine("Enter account balance: ");
+		decimal balance = GetValidDecimalInput();
+		//Getting and validating the withdrawal amount
+		Console.WriteLine("Enter withdrawal amount: ");
+		decimal withdrawal = GetValidDecimalInput();
+		//Adding a break for spacing
+		Console.WriteLine("");
+		//Validating the withdrawal process
+		//Output for an invalid input
+		if (withdrawal <=0)
+		{
+			Console.WriteLine("Transaction Failed!");
+			Console.WriteLine("Error: withdrawal amount must be greater than 0!");
+		}
+		//Output for insufficient funds
+		else if (withdrawal > balance)
+		{
+			Console.WriteLine("Transaction Failed!");
+			Console.WriteLine($"Error: Insufficient funds. your current balance is {balance:C}");
+		}
+		//Output for a successful withdrawal
+		else
+		{
+			decimal newBlanace = balance - withdrawal;
+			Console.WriteLine("Transaction Successful");
+			Console.WriteLine($"Withdrawal Amount: {withdrawal:C}");
+			Console.WriteLine($"Updated Balance: {newBlanace}");
+			Console.WriteLine($"Transaction Time: {DateTime.Now:dd MMM yyyy HH:mm:ss}");
+		}
+	}
+	// Helper method
+	static decimal GetValidDecimalInput()
+	{
+		while (true)
+		{
+			if (decimal.TryParse(Console.Readline(), out decimal results) && result >= 0)
+			{
+				return result;
+			}
+			else
+			{
+				Console.WriteLine("Error: Please enter a valid amount")
+			}
+		}
 	}
 }
