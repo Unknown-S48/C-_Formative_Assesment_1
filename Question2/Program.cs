@@ -42,7 +42,7 @@ class Question_2
 			else if (withdrawal > balance)
 			{
 				Console.WriteLine("Withdrawal Failed!");
-				Console.WriteLine($"Error: Insufficient funds. your current balance is {balance:C}");
+				Console.WriteLine($"Error: Insufficient funds. your current balance is {balance}");
 				Console.WriteLine("Please try again.\n");
 			}
 			//Output for a successful withdrawal

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Unknown\\Documents\\GitHub\\C#_Formative_Assesment_1\\Question_1\\Question_1.csproj": {}
+    "C:\\Users\\Unknown\\Documents\\GitHub\\C#_Formative_Assesment_1\\Question1\\Question_1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Unknown\\Documents\\GitHub\\C#_Formative_Assesment_1\\Question_1\\Question_1.csproj": {
+    "C:\\Users\\Unknown\\Documents\\GitHub\\C#_Formative_Assesment_1\\Question1\\Question_1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Unknown\\Documents\\GitHub\\C#_Formative_Assesment_1\\Question_1\\Question_1.csproj",
+        "projectUniqueName": "C:\\Users\\Unknown\\Documents\\GitHub\\C#_Formative_Assesment_1\\Question1\\Question_1.csproj",
         "projectName": "Question_1",
-        "projectPath": "C:\\Users\\Unknown\\Documents\\GitHub\\C#_Formative_Assesment_1\\Question_1\\Question_1.csproj",
+        "projectPath": "C:\\Users\\Unknown\\Documents\\GitHub\\C#_Formative_Assesment_1\\Question1\\Question_1.csproj",
         "packagesPath": "C:\\Users\\Unknown\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Unknown\\Documents\\GitHub\\C#_Formative_Assesment_1\\Question_1\\obj\\",
+        "outputPath": "C:\\Users\\Unknown\\Documents\\GitHub\\C#_Formative_Assesment_1\\Question1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Unknown\\AppData\\Roaming\\NuGet\\NuGet.Config"
