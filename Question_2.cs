@@ -17,16 +17,16 @@ class Question_2
 		Console.WriteLine("HI , WHAT IS YOUR NAME?");
 		string name = Console.ReadLine() ?? string.Empty;
 		Console.WriteLine("");
-		Console.WriteLine($"WELCOME {name.ToUpper()}");
+		Console.WriteLine($"WELCOME {name.ToUpper()}!");
 		//Getting and validating balance
-		Console.WriteLine("Enter account balance: ");
+		Console.Write($"Enter account balance: ");
 		decimal balance = GetValidDecimalInput();
 		//Loop for withdrawal attempts
 		bool transactionComplete = false;
 		while (!transactionComplete)
 		{
 			//Getting and validating the withdrawal amount
-			Console.WriteLine("Enter withdrawal amount: ");
+			Console.Write("Enter withdrawal amount: ");
 			decimal withdrawal = GetValidDecimalInput();
 			//Adding a break for spacing
 			Console.WriteLine("");
@@ -50,8 +50,8 @@ class Question_2
 			{
 				decimal newBalance = balance - withdrawal;
 				Console.WriteLine("Transaction Successful");
-				Console.WriteLine($"Withdrawal Amount: {withdrawal:C}");
-				Console.WriteLine($"Updated Balance: {newBalance:C}");
+				Console.WriteLine($"Withdrawal Amount: {withdrawal}");
+				Console.WriteLine($"Updated Balance: u{newBalance}");
 				Console.WriteLine($"Transaction Time: {DateTime.Now:dd MMM yyyy HH:mm:ss}");
 				transactionComplete = true;
 			}
@@ -69,7 +69,6 @@ class Question_2
 			else
 			{
 				Console.WriteLine("Invalid input! Please enter a valid number.");
-				Console.WriteLine("");
 			}
 		}
 	}
